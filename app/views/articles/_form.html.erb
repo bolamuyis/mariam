@@ -14,7 +14,7 @@
       </ul>
     </div>
   <% end %>
- 
+ <% if user_signed_in? %>
   <p>
     <%= form.label :title %><br>
     <%= form.text_field :title %>
@@ -28,5 +28,5 @@
   <p>
     <%= form.submit %>
   </p>
- 
+ <% end %>
 <% end %>
