@@ -68,3 +68,6 @@ gem 'devise'
 
 #joshuajansen/bulma-rails
 gem 'rails-assets-bulma', source: 'https://rails-assets.org'
+
+# Provides a better error page for Rails and other Rack apps. Includes source code inspection
+gem 'better_errors', '~> 2.5', '>= 2.5.1'

@@ -1,32 +1,38 @@
 
-<%= form_with model: @article, local: true do |form| %>
- 
+<div class="container is-fullhd">
+  <div class="notification has-background-white">
+  <div class="column is-three-fifths is-offset-one-fifth"> 
+    <div class="box">
+  <%= form_with model: @article, local: true do |form| %>
   <% if @article.errors.any? %>
     <div id="error_explanation">
       <h2>
-        <%= pluralize(@article.errors.count, "error") %> prohibited
-        this article from being saved:
+        <%= pluralize(@article.errors.count, "error") %> prohibited this article from being saved:
       </h2>
       <ul>
         <% @article.errors.full_messages.each do |msg| %>
           <li><%= msg %></li>
         <% end %>
       </ul>
-    </div>
-  <% end %>
+  </div>
+<% end %>
  <% if user_signed_in? %>
-  <p>
-    <%= form.label :title %><br>
-    <%= form.text_field :title %>
-  </p>
+  <div class="field">
+    <!--<%= form.label :title %><br>-->
+    <%= form.text_field :title, class: 'input', placeholder: 'Title' %>
+  </div>
  
-  <p>
-    <%= form.label :text %><br>
-    <%= form.text_area :text %>
-  </p>
+  <div class="field">
+    <%= form.text_area :text, class: 'input', placeholder: 'Text' %>
+  </div>
  
-  <p>
-    <%= form.submit %>
-  </p>
+  <div class="actions">
+    <%= form.submit  "Submit Article", class: "button is-dark is-medium"  %>
+  </div>
+            
  <% end %>
 <% end %>
+</div>
+</div>
+</div>
+</div>

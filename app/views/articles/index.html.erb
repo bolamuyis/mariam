@@ -1,32 +1,23 @@
+<!--  This container is <strong>fullwidth</strong> <em>until</em> the <code>$fullhd</code> breakpoint. -->
+<div class="container is-fullhd ">
+  <div class="coloumn has-text-centered ">
+    <div class="notification has-background-white">
 
-<h1>Listing Articles</h1>
+<!-- article content starts here -->
+<h2 class="title is-3 ">Blog Articles</h2>
+<% if user_signed_in? %>
+<%= link_to 'New article', new_article_path, class: "button is-dark is-medium" %>
+<% end %>
 
-<%= link_to 'New article', new_article_path %>
-
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Text</th>
-    <th colspan="3"></th>
-  </tr>
- 
-  <% @articles.each do |article| %>
-    <tr>
-      <td><%= article.title %></td>
-      <td><%= article.text %></td>
-      <td><%= ' ' %></td><td> <%= link_to 'Show', article_path(article) %></td> 
-      
-      <% if article.user == current_user %>
-      <td> | <%= link_to 'Edit', edit_article_path(article) %> </td> 
-      <td> | <%= link_to 'Destroy', article_path(article),
-              method: :delete,
-              data: { confirm: 'Are you sure?' } %></td>
-      <% end %>
-    </tr>
-  <% end %>
-</table>
+<%= render 'article' %>
 
 <%= form_with scope: :article, url: articles_path, local: true do |form| %>
 <% end %>
- 
-<%= link_to 'Home', welcome_index_path %>
+</div>
+</div>
+</div>
+</div>
+
+
+<!-- article content ends here -->
+<!-- This container ends here <strong>fullwidth</strong> <em>until</em> the <code>$fullhd</code> breakpoint. -->

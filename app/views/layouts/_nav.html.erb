@@ -1,0 +1,34 @@
+<nav class="navbar is-warning" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand"><span style="margin:.25rem 0rem 0rem 2rem">
+          <%= link_to 'Mariens Page', welcome_index_path, class: "title" %>   
+            </span>
+              <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+              </a>
+        </div>
+        <div id="navbarBasicExample" class="navbar-menu">
+          <div class="navbar-start">
+            <%= link_to 'Home', welcome_index_path, class: "navbar-item" %>
+            <%= link_to 'Blog', articles_path, class: "navbar-item" %>
+            <%= link_to 'Appointment', articles_path, class: "navbar-item" %>
+          </div>
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="buttons">
+        <% if user_signed_in? %>
+        <%= link_to 'Log out', destroy_user_session_path, method: :delete, class: "button is-dark" %>
+        <% else %>
+         <strong><span style="margin-right:0.5rem">
+          <%= link_to 'Sign up', new_user_registration_path, class: "button is-dark" %>
+         </span></strong>
+         <strong><span style="margin-right:1rem">
+          <%= link_to 'Log in', new_user_session_path, class: "button is-dark" %>
+          </span></strong>
+        <% end %>  
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

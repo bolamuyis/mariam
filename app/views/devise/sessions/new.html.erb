@@ -1,26 +1,53 @@
-<h2>Log in</h2>
-
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
-
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+<div class="container ">
+  <div class="column is-three-fifths is-offset-one-fifth"> 
+    <div class="box">
+      <div class="content has-text-centered">
+        <h1 class="title is-3 is-centered">Log in</h1>
+          <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+            <div class="field">
+              <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "input is-rounded", placeholder: 'Email Address' %>
+            </div>
+              <div class="field">
+               <%= f.password_field :password, autocomplete: "current-password", class: "input is-rounded", placeholder: 'Password' %>
+              </div>
+                <% if devise_mapping.rememberable? %>
+                  <div class="field">
+                    <%= f.check_box :remember_me %>
+                    <%= f.label :remember_me %>
+                  </div>
+                    <% end %>
+                  <div class="actions">
+              <%= f.submit "Log in", class: "button is-dark is-medium" %>
+            </div>
+          <% end %>
+        </div>
+      </div>
     </div>
-  <% end %>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
   </div>
-<% end %>
+</div>
+<!-- <%= render "devise/shared/links" %> -->
 
-<%= render "devise/shared/links" %>
+<!-- Field with icons
+
+<div class="field">
+  <p class="control has-icons-left has-icons-right">
+    <input class="input" type="email" placeholder="Email">
+    <span class="icon is-small is-left">
+      <i class="fas fa-envelope"></i>
+    </span>
+    <span class="icon is-small is-right">
+      <i class="fas fa-check"></i>
+    </span>
+  </p>
+</div>
+<div class="field">
+  <p class="control has-icons-left">
+    <input class="input" type="password" placeholder="Password">
+    <span class="icon is-small is-left">
+      <i class="fas fa-lock"></i>
+    </span>
+  </p>
+</div>
+
+ -->
+<!-- end of copy default form -->
