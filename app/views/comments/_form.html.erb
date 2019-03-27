@@ -1,14 +1,16 @@
 
 <%= form_with(model: [ @article, @article.comments.build ], local: true) do |form| %>
+  <!--
   <p>
     <%= form.label :commenter %><br>
     <%= form.text_field :commenter %>
   </p>
-  <p>
-    <%= form.label :body %><br>
-    <%= form.text_area :body %>
-  </p>
-  <p>
-    <%= form.submit %>
-  </p>
+  -->
+  <div class="field">
+    <!--<%= form.label :body %><br> -->
+    <%= form.text_area :body, placeholder: 'Add a comment', class: 'input'  %>
+  </div>
+<div class="actions">
+  <%= form.submit "Submit", class: "button is-dark is-medium" %>
+</div>
 <% end %>

@@ -16,3 +16,14 @@
  *= require_self
  */
  @import "bulma";
+
+.content h3 {
+    margin-bottom: 0;
+}
+hr {
+    background-color: rgb(255, 235, 148);
+    border: none;
+    display: block;
+    height: 2px;
+    margin: 0.5rem 0;
+}

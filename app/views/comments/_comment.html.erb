@@ -1,16 +1,26 @@
-<p>
+<div class="column"> 
+  <div class="content has-text-left">
+  <div>
+
+  <%= @article.user.email %>
+</div> 
+<!--<p>
   <strong>Commenter:</strong>
   <%= comment.commenter %>
-</p>
- 
+</p>-->
 <p>
-  <strong>Comment:</strong>
+  <strong>Writes:</strong>
   <%= comment.body %>
 </p>
 <p>
 <% if @article.user == current_user %>
   <%= link_to 'Destroy Comment', [comment.article, comment],
-               method: :delete,
-               data: { confirm: 'Are you sure?' } %>
+          method: :delete,
+          data: { confirm: 'Are you sure?' } %>
 <% end %>
 </p>
+
+</div> 
+
+</div> 
+<div><hr></div>

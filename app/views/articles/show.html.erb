@@ -1,6 +1,6 @@
 <!--  This container is <strong>fullwidth</strong> <em>until</em> the <code>$fullhd</code> breakpoint. -->
 <div class="container is-fullhd ">
-  <div class="notification">
+  <div class="notification has-background-white">
     <p>
       <strong>Title:</strong>
       <%= @article.title %>
@@ -9,13 +9,25 @@
       <strong>Text:</strong>
       <%= @article.text %>
     </p>
-    <h2>Comments</h2>
-      <%= render @article.comments %>
-    <h2>Add a comment:</h2>
-      <%= render 'comments/form' %>
-      <%= link_to 'Edit', edit_article_path(@article) %> |
-      <%= link_to 'Back', articles_path %>
-  </div>
+        <div class="columns is-mobile is-centered">
+          <div class="column is-half">
+            <h4 class="is-size-4"><strong>Comments</strong></h4>
+          </div>
+        </div>
+        <div class="columns is-mobile is-centered">
+          <div class="column is-half">
+            <%= render @article.comments %>
+          </div>
+        </div>
+        <div class="columns is-mobile is-centered">
+          <div class="column is-half">
+        <h2>Add a comment:</h2>
+          <%= render 'comments/form' %>
+          <%= link_to 'Edit', edit_article_path(@article) %> |
+          <%= link_to 'Back', articles_path %> 
+        </div>
+        </div>  
+    </div>
 </div>
 <!--  End of Show article content only -->
 
